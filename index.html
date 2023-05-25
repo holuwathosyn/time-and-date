@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date&time</title>
+    <link rel="stylesheet" href="index - Copy - Copy.css" />
+  </head>
+  <body onload="inittime()">
+    <div class="dateandtime">
+      <div class="date">
+        <span id="Day" style="color: orangered"> Day</span>,
+        <span id="month"> month</span>, <span id="Year"> Year</span>,
+        <span id="daynum" style="color: orangered"> 00</span>
+      </div>
+      <div class="time">
+        <span id="Hour">Hour</span>: <span id="minute">minute</span>:
+        <span id="seconds">seconds</span>:
+        <span id="period">Am</span>
+      </div>
+    </div>
+    <script>
+      function updatetime() {
+        var now = new Date();
+        var mynum = now.getDay(),
+          mo = now.getMonth(),
+          Year = now.getFullYear(),
+          dy = now.getDate(),
+          Hour = now.getHours(),
+          minute = now.getMinutes(),
+          seconds = now.getSeconds(),
+          period = Hour <= 12 ? "Am" : "pm";
+        var month = [
+          "January",
+          "feburary",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        var week = [
+          "sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var ids = [
+          "Day",
+          "month",
+          "Year",
+          "daynum",
+          "Hour",
+          "minute",
+          "seconds",
+          "period",
+        ];
+        values = [
+          week[mynum],
+          month[mo],
+          Year,
+          dy,
+          Hour,
+          minute,
+          seconds,
+          period,
+        ];
+        for (var i = 0; i < ids.length; i++)
+          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+      }
+
+      function inittime() {
+        updatetime();
+        window.setInterval("updatetime()", 1);
+      }
+    </script>
+  </body>
+</html>

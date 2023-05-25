@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  background-color: rgb(71, 30, 30);
+}
+.dateandtime{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: solid 9px white;
+  padding: 50px;
+  border-radius: 30px;
+  margin: 10px;
+ color: white;
+  cursor: pointer;
+  
+}
+#period{
+  animation-name: samuel;
+  animation-duration: 20s;
+  animation-direction: linear;
+}
+@keyframes samuel{
+  0%{
+    background-color: black;
+    transform: translate(0, 10px);
+  }
+  10%{
+    background-color: yellow;
+      transform: translate(0, 50px);
+  }
+  50%{
+background-color: rgb(236, 12, 50);
+  transform: translate(0, 70px);
+  }
+  100%{
+    background-color: blue;
+    transform: translate(0, 90px);
+  }
+}
+.dateandtime:hover{
+ 
+background-color: black;
+
+  transition: 2s ease-out;
+  padding-left: 30px;
+ font-style: italic;
+ color: white;
+ box-shadow: 0 30px orangered;
+}
+.date{
+  font-size: 1.5rem;
+ word-spacing: 10px;
+ display: flex;
+ gap: 5px;
+  font-weight: lighter;
+}
+.time{
+  font-size: 1.5rem;
+  word-spacing: 10px;
+  position: relative;
+  left: 40px;
+  top: 10px;
+    font-weight: lighter;
+    -webkit-box-reflect: below 92px linear (linear-gradient(blue));
+}
+.time span:last-child{
+  background-color: orange;
+  padding: 7px;
+  border-radius: 0 20px;
+}
+@media(max-width:280px){
+  body{
+    background-color: rgb(71, 30, 30);
+  }
+ .dateandtime{
+  width: max-content;
+  padding:70px;
+  margin-left: 130px;
+ }
+}
